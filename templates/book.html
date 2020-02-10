@@ -23,4 +23,21 @@
 <hr>
 <b> Отзывы: </b>
 
+<form action="" method="POST">
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">
+        {% if user %}
+        Оставьте отзыв
+        {% else %}
+        Отзывы могут оставлять авторизованные пользователи
+        {% endif %}
+      </label>
+      <textarea class="form-control" id="reviews" rows="3" {% if user == False %} disabled  {% endif %}></textarea>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary" {% if user == False %} disabled  {% endif %}>Оставить отзыв</button>
+    </div>
+  </form>
+ 
+
 {% endblock %}
