@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block control %}
+<h1>Поиск</h1>
+<form>
+  <div class="form-group">
+    <label for="name_book">Книга</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name_book"
+      placeholder="Название книги"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="id_author">Автор</label>
+    <input
+      type="text"
+      class="form-control"
+      id="id_author"
+      placeholder="Автор"
+    />
+  </div>
+
+<!--
+Сделать поиск по жанру из выпадающего списка
+
+
+-->
+
+  <button type="submit" class="btn btn-primary">Поиск</button>
+</form>
+{% endblock %}

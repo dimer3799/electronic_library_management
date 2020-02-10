@@ -111,6 +111,14 @@ def book(book_id):
         return render_template('book.html', menu_items = MENU_USERS, user = session['user'], data_book = books.output_one(book_id))    
     return render_template('book.html', menu_items = MENU_ANONYMOUS, user = False, data_book = books.output_one(book_id))
 
+# Поиск книги
+@app.route('/search/')
+def search():
+    if session.get('user'):
+        return render_template('search.html', menu_items = MENU_USERS, user = session['user'])    
+    return render_template('search.html', menu_items = MENU_ANONYMOUS, user = False)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
