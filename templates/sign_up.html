@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block control %}
+  <div class="row justify-content-center">
+    <div class="col col-md-6">
+        <h3>Регистрация</h3>
+       <form action="{{ url_for('sign_up') }}" method="POST">
+        <!--<form>-->
+            <div class="form-group">
+                <label for="login">Логин</label>
+                <input type="text" name="login" class="form-control" id="login" placeholder="*Логин">
+                {% if login_busy %}
+                    <small class="text-danger">Логин уже занят</small></br>
+                {% endif %}
+                {% if login_incorect %}
+                    <small class="text-danger">Логин содержит недопустимые символы</small></br>
+                {% endif %}
+
+                
+                <label for="name">Имя</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="*Имя">
+                {% if name_incorect %}
+                <small class="text-danger">Имя содержит недопустимые символы</small></br>
+                {% endif %}
+      
+                <label for="surname">Фамилия</label>
+                <input type="text" name="surname" class="form-control" id="surname" placeholder="*Фамилия">
+                {% if surname_incorect %}
+                <small class="text-danger">Фамилия содержит недопустимые символы</small></br>
+                {% endif %}
+     
+                <label for="age">Ваш возраст</label>
+                <input type="text" name="age" class="form-control" id="age" placeholder="*Возраст">
+                {% if age_incorect %}
+                <small class="text-danger">Возраст содержит недопустимые символы</small></br>
+                {% endif %}
+
+                <label for="pass">Пароль</label>
+                <input type="password" name="pass" class="form-control" id="pass" placeholder="*Пароль">
+                {% if pass_incorect %}
+                <small class="text-danger">Пароль пустой или содержит пробелы</small></br>
+                {% endif %}
+                <small class="text-danger">* Обязательно к заполнению</small>
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Регистрация</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block control %}
+<h3> &nbsp; Информация о книге</h3>
+<br>
+<container>
+<div class="row">
+<span vspace = "3"> <img width="250" height="330" align="left" hspace = "19"
+    src="../static/images/{{ data_book[6] }}" alt="Обложка книги"/>
+
+    <b>Название: </b>   {{ data_book[2] }} </a>
+    <br /> 
+    <b>Автор: </b>  {{ data_book[1] }} </a>
+    <br>
+    <b> Год: </b> {{ data_book[3] }}
+    <br /> 
+    <b> Жанр: </b> {{ data_book[5] }}
+    <br /> <br />
+    <b> Описание: </b><br />
+    <p align="justify">{{ data_book[4] }}</p>
+  
+</div>
+</container>
+<hr>
+<b> Отзывы: </b>
+
+{% endblock %}

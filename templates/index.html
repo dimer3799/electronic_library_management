@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block control %}
+<h1>Книги</h1>
+<hr />
+
+<div class="row justify-content-left">
+  <div class="col col-md-10">
+    {% for book in data_book %}
+    <br/>
+    <span vspace = "3"> <img width="150" height="230" align="left" hspace = "15"
+      {% if index < 10 %}
+      src=   "static/images/{{ book[6] }}" 
+      {% else %}
+      src=   "../static/images/{{ book[6] }}"
+      {% endif %}
+      alt="Обложка книги"/>
+
+      <form>
+        <b>Название: </b>   <a  href="{{ url_for('book', book_id = book[0]) }}">  {{ book[2] }} </a>
+        <br /> 
+        <b>Автор: </b>  {{ book[1] }} </a>
+        <br>
+        <b> Год: </b> {{ book[3] }}
+        <br /> 
+        <b> Жанр: </b> {{ book[5] }}
+        <br /> <br />
+        <b> Описание: </b><br />
+        <p align="justify">{{ book[4] }}</p>
+      </form>
+
+    </span>
+
+    <hr />
+    {% endfor %}
+    {% if index > 10 %}
+    <a  href="{{ url_for('index', index = index - 10) }}"> <button type="submit" class="btn btn-primary">Назад</button> </a>
+    {% endif %}
+    <a  href="{{ url_for('index', index = index + 10) }}"> <button type="submit" class="btn btn-primary">Далее</button> </a>    
+
+  </div>
+</div>
+
+{% endblock %}

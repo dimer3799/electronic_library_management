@@ -1,0 +1,32 @@
+{% block menu %}
+
+<div class="container">
+    <div class="row">
+        <div class = "col col-md-12">
+<ul class="nav justify-content-end">
+  {% for item in menu_items %}
+    <li class="nav-item">
+      <a class="nav-link active" href="{{ item['ref'] }}">{{ item['name'] }}</a>
+    </li>
+  {% endfor %}
+  {% if user %}
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ user }}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="{{ url_for('profile') }}">Профиль</a>
+      <a class="dropdown-item" href="{{ url_for('user_page') }}">Настройки</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="{{ url_for('logout') }}">Выход</a>
+    </div>
+  </li>
+  </ul>
+  </div>
+  {% endif %}
+  <div class = "col col-md-1"></div>
+
+
+</div>
+</div>
+{% endblock %}

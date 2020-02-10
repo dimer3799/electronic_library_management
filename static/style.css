@@ -1,0 +1,26 @@
+body {
+  font: .8em/1.8em Verdana, Geneva, Arial, Helvetica, sans-serif;
+  background-color: #FFFFFF;
+  color: #000000;
+  margin: 0 10% 0 10%;
+  text-align: justify;
+  font-size:14px;
+}
+
+h2, h3 {
+
+  color: #256579;
+  font: 1.8em Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+
+a{
+  color:#000000;
+}
+
+a:hover{
+  color: #1E90FF;
+  border-bottom: .07em solid;
+
+}
+

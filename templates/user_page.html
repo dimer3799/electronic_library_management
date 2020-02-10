@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block control %}
+<h3> Редактирование профиля: {{ user }}</h3>
+<br/>
+<form action="{{ url_for('user_page') }}" method="POST">
+        <div class="form-group row">
+          <label for="surname" class="col-sm-2 col-form-label">Фамилия</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="surname" name="surname" value="{{ data[3] }}">
+          </div>
+        </div>
+        <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">Имя</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="name" name="name" value="{{ data[2] }}">
+                </div>
+              </div>
+              <div class="form-group row">
+                    <label for="age" class="col-sm-2 col-form-label">Возраст</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="age" name="age" value="{{ data[4] }}">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                        <label for="about" class="col-sm-2 col-form-label">О себе:</label>
+                        <div class="col-sm-5">
+                          <textarea type="text" class="form-control" id="about" name="about" rows = "8">{% if data[5] %}{{ data[5] }}{% endif %}</textarea>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+      </form>
+{% endblock %}
