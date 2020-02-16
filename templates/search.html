@@ -20,24 +20,19 @@
       placeholder="Автор"
     />
   </div>
- 
+
   <div class="form-group">
     <label for="exampleFormControlSelect1">Выберите жанр:</label>
     <select class="form-control" id="exampleFormControlSelect1">
       <option>Пусто</option>
-  {% for genre in data_genre %}
-  <option> {{ genre[1] }} </option>
-  {% endfor %}
-
+      {% for genre in data_genre %}
+      <option> {{ genre[1] }} </option>
+      {% endfor %}
     </select>
   </div>
 
-<!--
-Сделать поиск по жанру из выпадающего списка
-
-
--->
-
   <button type="submit" class="btn btn-primary">Поиск</button>
 </form>
+<br />
+<hr />
 {% endblock %}
