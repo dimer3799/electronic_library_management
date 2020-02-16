@@ -40,6 +40,20 @@ class Book:
         self.con.close()
         return response
 
+    def genre(self):
+        # Вывод всех жанров в список
+        self.con = sqlite3.connect(self.db_name, check_same_thread=False) if self.db_name else None
+        self.cursor = self.con.cursor()
+        query_get_book_one = '''
+            SELECT * FROM genre_book
+            '''
+
+        result = self.cursor.execute(query_get_book_one)
+        response = result.fetchall()           
+        # Закрытие курсора и соединения с базой
+        self.con.close()
+        return response
+
     
     def reviews(self, id_book):
         # Вывод отзывов на книгу

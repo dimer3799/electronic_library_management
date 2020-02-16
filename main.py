@@ -115,8 +115,8 @@ def book(book_id):
 @app.route('/search/')
 def search():
     if session.get('user'):
-        return render_template('search.html', menu_items = MENU_USERS, user = session['user'])    
-    return render_template('search.html', menu_items = MENU_ANONYMOUS, user = False)
+        return render_template('search.html', menu_items = MENU_USERS, user = session['user'], data_genre = books.genre())    
+    return render_template('search.html', menu_items = MENU_ANONYMOUS, user = False, data_genre = books.genre())
 
 
 
