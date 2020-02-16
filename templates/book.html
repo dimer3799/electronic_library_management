@@ -13,7 +13,150 @@
     <br>
     <b> Год: </b> {{ data_book[3] }}
     <br /> 
-    <b> Жанр: </b> {{ data_book[5] }}
+    <b> Жанр: </b>
+    {% if data_book[5] == 1 %}
+Автобиография
+{% elif data_book[5] == 2 %}
+Аллегория
+{% elif data_book[5] == 3 %}
+Антиутопия
+{% elif data_book[5] == 4 %}
+Баллада
+{% elif data_book[5] == 5 %}
+Басня
+{% elif data_book[5] == 6 %}
+Биография
+{% elif data_book[5] == 7 %}
+Готика
+{% elif data_book[5] == 8 %}
+Детектив
+{% elif data_book[5] == 9 %}
+Детская литература
+{% elif data_book[5] == 10 %}
+Для подростков
+{% elif data_book[5] == 11 %}
+Документальная литература
+{% elif data_book[5] == 12 %}
+Драма
+{% elif data_book[5] == 13 %}
+История
+{% elif data_book[5] == 14 %}
+Киберпанк
+{% elif data_book[5] == 15 %}
+Классика
+{% elif data_book[5] == 16 %}
+Комедия
+{% elif data_book[5] == 17 %}
+Криптоистория
+{% elif data_book[5] == 18 %}
+Лирика
+{% elif data_book[5] == 19 %}
+Магический реализм
+{% elif data_book[5] == 20 %}
+Мемуары
+{% elif data_book[5] == 21 %}
+Мистика
+{% elif data_book[5] == 22 %}
+Мифы
+{% elif data_book[5] == 23 %}
+Модернизм
+{% elif data_book[5] == 24 %}
+Натурализм
+{% elif data_book[5] == 25 %}
+Научная литература
+{% elif data_book[5] == 26 %}
+Неоромантизм
+{% elif data_book[5] == 27 %}
+Новелла
+{% elif data_book[5] == 28 %}
+О животных
+{% elif data_book[5] == 29 %}
+О войне
+{% elif data_book[5] == 30 %}
+О любви
+{% elif data_book[5] == 31 %}
+Пародия
+{% elif data_book[5] == 32 %}
+Плутовской роман
+{% elif data_book[5] == 33 %}
+Повесть
+{% elif data_book[5] == 34 %}
+Постапокалипсис
+{% elif data_book[5] == 35 %}
+Постмодернизм
+{% elif data_book[5] == 36 %}
+Поток сознания
+{% elif data_book[5] == 37 %}
+Поэзия
+{% elif data_book[5] == 38 %}
+Поэма
+{% elif data_book[5] == 39 %}
+Приключения
+{% elif data_book[5] == 40 %}
+Притча
+{% elif data_book[5] == 41 %}
+Проза
+{% elif data_book[5] == 42 %}
+Психология
+{% elif data_book[5] == 43 %}
+Публицистика
+{% elif data_book[5] == 44 %}
+Путевые заметки
+{% elif data_book[5] == 45 %}
+Пьеса
+{% elif data_book[5] == 46 %}
+Рассказ
+{% elif data_book[5] == 47 %}
+Реализм
+{% elif data_book[5] == 48 %}
+Роман
+{% elif data_book[5] == 49 %}
+Роман в письмах
+{% elif data_book[5] == 50 %}
+Сага
+{% elif data_book[5] == 51 %}
+Сатира
+{% elif data_book[5] == 52 %}
+Сборник
+{% elif data_book[5] == 53 %}
+Сказка
+{% elif data_book[5] == 54 %}
+Современная проза
+{% elif data_book[5] == 55 %}
+Сюрреализм
+{% elif data_book[5] == 56 %}
+Теософия
+{% elif data_book[5] == 57 %}
+Трагедия
+{% elif data_book[5] == 58 %}
+Трагикомедия
+{% elif data_book[5] == 59 %}
+Триллер
+{% elif data_book[5] == 60 %}
+Утопия
+{% elif data_book[5] == 61 %}
+Фантастика
+{% elif data_book[5] == 62 %}
+Философия
+{% elif data_book[5] == 63 %}
+Фольклор
+{% elif data_book[5] == 64 %}
+Фэнтези
+{% elif data_book[5] == 65 %}
+Хоррор
+{% elif data_book[5] == 66 %}
+Эзотерика
+{% elif data_book[5] == 67 %}
+Эпос
+{% elif data_book[5] == 68 %}
+Эротика
+{% elif data_book[5] == 69 %}
+Эссе
+{% elif data_book[5] == 70 %}
+Юмор
+        {% endif %}
+
+
     <br /> <br />
     <b> Описание: </b><br />
     <p align="justify">{{ data_book[4] }}</p>
