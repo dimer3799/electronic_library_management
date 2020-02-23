@@ -53,11 +53,20 @@ class Book:
         # Закрытие курсора и соединения с базой
         self.con.close()
         return response
-
-    
+        
     def reviews(self, id_book):
         # Вывод отзывов на книгу
         self.con = sqlite3.connect(self.db_name, check_same_thread=False) if self.db_name else None
         self.cursor = self.con.cursor()
         self.con.close()
         #return response
+
+    def search(self, user_form):
+        #Поиск книги
+        self.con = sqlite3.connect(self.db_name, check_same_thread=False) if self.db_name else None
+        self.cursor = self.con.cursor()
+        if (user_form['name_book'] == '') and (user_form['name_author'] == '') and (user_form['genre'] == 'Пусто'):
+            return {'status': 'data_none'}
+        
+        self.con.close()
+

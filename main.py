@@ -112,13 +112,23 @@ def book(book_id):
     return render_template('book.html', menu_items = MENU_ANONYMOUS, user = False, data_book = books.output_one(book_id))
 
 # Поиск книги
-@app.route('/search/')
+@app.route('/search/', methods=['GET', 'POST'])
 def search():
+    data_incorect = False
+    menu_items = MENU_ANONYMOUS
+    user = False
+    if request.method == 'POST':
+        result = books.search(request.form)
+        # Обработка пустых данных
+        if result['status'] == 'data_none':
+            data_incorect = True    
     if session.get('user'):
-        return render_template('search.html', menu_items = MENU_USERS, user = session['user'], data_genre = books.genre())    
-    return render_template('search.html', menu_items = MENU_ANONYMOUS, user = False, data_genre = books.genre())
+        menu_items = MENU_USERS
+        user = session['user']
+                
+    return render_template('search.html', menu_items = menu_items, user = user, data_genre = books.genre(), data_incorect = data_incorect)
 
-
+        
 
 if __name__ == '__main__':
     app.run(debug=True)
